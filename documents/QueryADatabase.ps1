@@ -13,5 +13,5 @@ $command.CommandText = $query
 $ds = New-Object system.Data.DataSet
 $da = New-Object Oracle.ManagedDataAccess.Client.OracleDataAdapter($command)
 [void]$da.fill($ds)
-return $ds.Tables[0] | SELECT Settle_due_date, Orduid, Invcode, Deceased, Goneaway, Dealdt, Ifname, Trstcode, Title, Unittype, Auto_Renunc, Client_Money, Renunc_Received_Date, Renunc_Received, Renunc_Received_User, Renunc_Postal_Ref, Client_Money_Reason, Mancode, Status, Proc, Source | Export-CSV "C:\test.csv" -NoTypeInformation
+return $ds.Tables[0] | SELECT somedata in here | Export-CSV "C:\test.csv" -NoTypeInformation
 $connection.Close()
